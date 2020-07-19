@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/dark_blue"
+    android:layout_width="match_parent"
+    android:elevation="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/_video_thumb"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_video_library_black_24dp"
+                />
+
+
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/_video_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Video Title"
+                    android:layout_marginBottom="-10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/ja"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="description"
+                    android:textSize="12dp"
+                    android:maxLines="1"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/ja"
+                    />
+
+                <TextView
+                    android:id="@+id/_fav_store_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Store Name"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/ja"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="-5dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/_views"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="157"
+                        android:textSize="16dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/gray"
+                        android:fontFamily="@font/ja"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="views"
+                        android:textSize="16dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@color/gray"
+                        android:fontFamily="@font/ja" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/_delet"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/ic_close_black_24dp" />
+            </LinearLayout>
+        </LinearLayout>
+</androidx.cardview.widget.CardView>

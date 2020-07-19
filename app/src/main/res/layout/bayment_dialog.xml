@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_blue"
+        android:fontFamily="@font/ja"
+        android:text="Payment Method"/>
+
+    <Button
+        android:id="@+id/_pay_delivery"
+        android:layout_width="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_motorcycle_black_24dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/dark_blue"
+        android:text="Pay on delivery"
+        android:textAllCaps="false"
+        android:textSize="16dp"/>
+
+    <Button
+        android:id="@+id/_pay_visa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/dark_blue"
+        android:text="Pay via Visa"
+        android:textAllCaps="false"
+        android:textSize="16dp"/>
+</LinearLayout>

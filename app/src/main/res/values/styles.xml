@@ -1,0 +1,315 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white_blue</item>
+        <item name="colorPrimaryDark">@color/dark_blue</item>
+        <item name="colorAccent">@color/white</item>
+
+    </style>
+    <style name="AppTheme1" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+
+    </style>
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert"></style>
+
+
+
+
+    <!--    spinne style-->
+
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/bg_spinner</item>
+    </style>
+
+<!--    Rating-->
+    <style name="customRatingBar"
+        parent="android:style/Widget.Material.RatingBar.Small">
+        <item name="android:progressTint">@color/yellow</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/orange</item>
+        <item name="colorControlActivated">@color/orange</item>
+        <item name="colorAccent">@color/orange</item>
+    </style>
+
+    <style name="Style_TextView">
+        <item name="fontFamily">@font/ja</item>
+
+    </style>
+
+
+<!--    bottom nav font style-->
+    <style name="Widget.BottomNavigationView"
+        parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/ja</item>
+    </style>
+
+    <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">#E0E0E0</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="actionbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/dark_blue</item>
+    </style>
+
+
+<!--   __________________ chats Style __________________ ... -->
+    <style name="chat_history_item">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="chat_history_image">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="chat_his_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="chat_history_name">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/dark_blue</item>
+    </style>
+
+    <style name="chat_history_date">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="chat_history_last_msg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="chats_line">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+    <!--   __________________ end of chat style __________________-->
+
+
+
+<!--    ______________ Bottom Sheet Style ______________-->
+    <style name="bottomSheetLinear">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:weightSum">9</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@color/dark_blue</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="bottomSheetButtons">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:weightSum">9</item>
+        <item name="android:background">@color/dark_blue</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="bottomSheetText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:weightSum">9</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@color/dark_blue</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="bottomSheetImgs">
+        <item name="android:layout_gravity">left</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:background">@drawable/callbg</item>
+    </style>
+
+    <style name="bottomSheetVoice">
+        <item name="android:layout_gravity">left</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:background">@drawable/callbg</item>
+    </style>
+
+    <style name="bottomSheetFile">
+        <item name="android:layout_gravity">left</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:background">@drawable/callbg</item>
+    </style>
+    <!--   __________________ end of bottom sheet style __________________-->
+
+
+
+
+
+
+    <style name="AppTheme.NoActionBar2">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:actionModeBackground">@color/new_dark</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.NoMain">
+        <item name="windowActionBarOverlay">false</item>
+    </style>
+
+
+    <style name="spinner_style">
+        <item name="android:background">@drawable/spinner_bg</item>
+
+        <item name="android:popupBackground">#DFFFFFFF</item>
+    </style>
+
+    <style name="spinner_style2">
+        <item name="android:background">@drawable/spinner_bg_white</item>
+
+        <item name="android:popupBackground">#DFFFFFFF</item>
+    </style>
+
+    <style name="selectTapStyle" parent="AppTheme">
+        <item name="android:actionBarTabStyle">@style/MyTabStyle</item>
+    </style>
+
+    <style name="MyTabStyle" parent="android:Widget.ActionBar.TabView">
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="sectionHeader" parent="android:Widget.Holo.Light.TextView">
+
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/emphasis</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="AppTheme.dialog" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Base.Widget.Design.TabLayout" parent="android:Widget">
+        <item name="tabIndicatorColor">#004778</item>
+        <item name="tabIndicatorHeight">2dp</item>
+    </style>
+
+
+    <style name="SentMessageTimeTextStyle" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/blue_grey_300</item>
+    </style>
+    <style name="ReceivedMessageTimeTextStyle" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/blue_grey_300</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+    </style>
+
+    <style name="navigation">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginEnd">0dp</item>
+        <item name="android:background">@color/dark_blue</item>
+        <item name="android:theme">@style/AppTheme</item>
+    </style>
+
+    <style name="mainToolbarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/dark_blue</item>
+    </style>
+
+
+
+
+
+
+
+    <!--  Transparent dialog -->
+    <style name="TransparentProgressDialo">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
+
+</resources>

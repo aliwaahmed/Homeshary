@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="yellow">#FFCA28</color>
+    <color name="white">#fff</color>
+    <color name="white_gray">#D1D1D1</color>
+    <color name="purple">#3C0B3A</color>
+    <color name="transition">#2C3C0B3A</color>
+    <color name="facebook">#3F51B5</color>
+    <color name="white_purple">#5A2252</color>
+    <color name="navColor">#ED862784</color>
+    <color name="follow">#D81B60</color>
+    <color name="gray">#9E9E9E</color>
+
+    <color name="gold">#F8C160</color>
+
+
+    <!--    orders statues colors-->
+    <color name="orange">#EF6C00</color>
+    <color name="green">#2FB935</color>
+    <color name="red">#E71313</color>
+
+    <color name="cancelCall">#B43434</color>
+
+
+
+    <color name="trans">#A8000000</color>
+
+
+    <color name="white_blue">#37474f</color>
+    <color name="dark_blue">#263238</color>
+
+
+
+    <color name="transPurple">#6B3C0B3A</color>
+    <color name="barbg">#60D81B60</color>
+
+    <color name="transbg">#4B000000</color>
+
+    <color name="InactiveBottomNavIconColor">#000000</color>
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#fff</color>
+
+
+
+    <color name="maincolor">#FFFFFF</color>
+    <color name="txtcolor">#5F0261</color>
+    <color name="background">#C2C2C2</color>
+
+
+
+    <color name="black">#000000</color>
+
+
+    <color name="main_text_color">#004080</color>
+    <color name="scecond_text_color">#D80043</color>
+
+    <color name="bg_contact">#F9F9F9</color>
+    <color name="contact_text">#000000</color>
+    <color name="contact_number">#7F7F7F</color>
+    <color name="main_color">#FFC90E</color>
+    <color name="secandary_yelow">#77fff70e</color>
+    <color name="textHint">#D3D3D3</color>
+    <color name="blue_grey">#607d8b</color>
+    <color name="emphasis">#31b6e7</color>
+    <color name="btn_background">#006eb9</color>
+    <color name="blue_grey_300">#757676</color>
+    <color name="amber_900">#ff6f00</color>
+    <color name="yellow_900">#f57f17</color>
+    <color name="new_dark">#00395D</color>
+    <color name="brown">#CF2828</color>
+
+    <!-- Screens background color-->
+    <color name="bg_screen1">#3395ff</color>
+    <color name="bg_screen2">#1584FC</color>
+    <color name="bg_screen3">#236BB9</color>
+    <color name="bg_screen4">#266FBD</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#d1395c</color>
+    <color name="dot_dark_screen2">#14a895</color>
+    <color name="dot_dark_screen3">#2278d4</color>
+    <color name="dot_dark_screen4">#a854d4</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#f98da5</color>
+    <color name="dot_light_screen2">#8cf9eb</color>
+    <color name="dot_light_screen3">#93c6fd</color>
+    <color name="dot_light_screen4">#e4b5fc</color>
+
+    <color name="sent_message_title_color">#ff1e241c</color>
+
+</resources>

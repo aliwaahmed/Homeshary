@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="app_name">Shary.live</string>
+    <string name="login">login</string>
+    <string name="newAccount">New Account</string>
+    <string name="or">or</string>
+    <string name="loginVia">login with</string>
+    <string name="loginToolbar">login</string>
+    <string name="name">name</string>
+    <string name="email">E-mail</string>
+    <string name="pass">Password</string>
+    <string name="confirm">Confirm Password</string>
+    <string name="createAccount">Create Account</string>
+    <string name="sendCode">Send Code</string>
+    <string name="code">code</string>
+    <string name="newPass">New Password</string>
+    <string name="forgetPass">Forget Password</string>
+    <string name="registerAgain">Register</string>
+    <string name="codeText">برجاء ادخال البريد الالكتروني الخاص بك حتى نتمكن من ارسال كود لاستعادة حسابك</string>
+    <string name="missing_name">Name is missing</string>
+    <string name="missing_email">E-mail Missing</string>
+    <string name="missing_pass">Password Missing</string>
+    <string name="missing_confirm">Confirm Password Missing</string>
+    <string name="successfull">Successfully Registered </string>
+    <string name="notEqual">Not the same password</string>
+    <string name="no_symbols">No symbols</string>
+    <string name="home">Home</string>
+    <string name="chats">Chats</string>
+    <string name="search">Search</string>
+    <string name="live">Live</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+
+    <string name="slider">This is slider item This is slider item This is slider item This is slider item
+    This is slider item This is slider item This is slider item This is slider item</string>
+    <string name="settings">Settings</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="most_search">Most Search</string>
+    <string name="seemore">see more</string>
+    <string name="title">Title</string>
+    <string name="follow">Follow</string>
+    <string name="unfollow">Unfollow</string>
+    <string name="descr">Lorem Apsum Lorem ApsumLorem ApsumLorem ApsumLorem ApsumvLorem ApsumLorem ApsumLorem Apsum</string>
+    <string name="entername">Enter Name</string>
+    <string name="ComfirmCode">Confirm Code</string>
+    <string name="sendCodeadmin">Send Code Admin</string>
+
+    <string name="facebook_app_id">537247116817945</string>
+    <string name="fb_login_protocol_scheme">fb537247116817945</string>
+
+    <string name="server_client_id">YOUR_SERVER_CLIENT_ID</string>
+    <string name="Email">Enter Email</string>
+    <string name="sendmydat">Send Password</string>
+
+    <string name="product_name">Product name</string>
+    <string name="product_desc">Product description</string>
+
+    <string name="seller_name">Seller</string>
+    <string name="qty">Quantity</string>
+    <string name="item_price">Item price</string>
+    <string name="total_price">Total price</string>
+    <string name="discount">Discount</string>
+    <string name="fav">Favourite</string>
+
+    <string name="video_title">Video title</string>
+    <string name="video_desc">Description</string>
+    <string name="store_name">Store name</string>
+    <string name="views">View</string>
+
+    <string name="history">History</string>
+    <string name="edit_info">Edit Information</string>
+    <string name="notify">Notifications</string>
+    <string name="about">About Shary</string>
+    <string name="light">Light Mood</string>
+    <string name="dark">Dark Mood</string>
+    <string name="TypingMessage">Type a message</string>
+
+    <string name="addednewvideo">Added new video</string>
+    <string name="notification_date">Date</string>
+
+    <string name="view_notification">View</string>
+    <string name="send_ver_code">Please insert your e-mail Address so that we can send you verification
+    code to restore your account</string>
+
+    <string name="restoreemail">Restore E-mail</string>
+    <string name="video_call">Video Call</string>
+    <string name="voice_call">Voice Call</string>
+    <string name="statue">Statue</string>
+
+    <string name="addtocrat">Add to cart</string>
+    <string name="callseller">Call Seller</string>
+    <string name="sendmsg">Send message</string>
+    <string name="buynow">Buy Now</string>
+
+    <string name="rate">Rate Product</string>
+    <string name="confirm_rate">Confirm</string>
+
+    <string name="calling">Calling ...</string>
+    <string name="end_call">End Call</string>
+    <string name="mute">Mute</string>
+    <string name="speaker">Speaker</string>
+
+
+    <string name="share">share</string>
+    <string name="like">like</string>
+    <string name="comment">comment</string>
+
+    <string name="next">Next</string>
+
+    <string name="ver_code">Verification Code</string>
+
+    <string name="available_qty">Available Quantity</string>
+    <string name="share_product">Share Product</string>
+
+    <string name="search_result">Search Result</string>
+    <string name="notification">Notifaction</string>
+
+    <string name="old_price">Old price</string>
+
+    <string name="following">Following</string>
+    <string name="notification_settings">Notidications Settings</string>
+    <string name="load">Loading</string>
+
+    <string name="inc_msg">Messages to this chat are now secured whit end-to-end encryption</string>
+
+    <string name="address">address</string>
+    <string name="phone">mobile number</string>
+
+    <string name="order_now">Order now</string>
+
+    <string name="confirm_data">Confirm Data</string>
+
+    <string name="confirm_your_data">Confirm your delivery data</string>
+
+    <string name="order_progress">Your order is in progress</string>
+    <string name="ok">Ok</string>
+
+    <string name="remove_from_cart">Remove from cart</string>
+
+    <string name="confirm_buy">Confirm Buy</string>
+    <string name="title_activity_googlemaps">Map</string>
+
+    <string name="location">Get Location</string>
+    <string name="skip">Skip</string>
+
+    <string name="number">Number</string>
+    <string name="invite">Invite</string>
+    <string name="shareapp">Share App</string>
+
+    <string name="adv_text">Advertising campaign request</string>
+
+    <string name="company">Company</string>
+    <string name="additional_info">Additional Information</string>
+
+    <string name="price">Price :</string>
+
+    <string name="View">View</string>
+    <string name="deliver">الاستلام من المقر</string>
+    <string name="deliver2">الاستلام من المقر</string>
+    <string name="share100">قام بمشاركه المنتج</string>
+
+
+</resources>

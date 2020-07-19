@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="app_name">شاري لايف</string>
+    <string name="login">تسجيل دخول</string>
+    <string name="newAccount">حساب جديد</string>
+    <string name="or">أو</string>
+    <string name="loginVia">دخول بواسطة</string>
+    <string name="loginToolbar">دخول</string>
+    <string name="name">الاسم</string>
+    <string name="email">البريد الالكتروني</string>
+    <string name="pass">كلمة المرور</string>
+    <string name="confirm">تأكيد كلمة المرور</string>
+    <string name="createAccount">انشاء حساب</string>
+    <string name="sendCode">ارسال الكود</string>
+    <string name="code">الكود</string>
+    <string name="newPass">كلمة المرور الجديدة</string>
+    <string name="forgetPass">نسيت كلمة المرور</string>
+    <string name="registerAgain">تسجيل</string>
+    <string name="codeText">برجاء ادخال البريد الالكتروني الخاص بك حتى نتمكن من ارسال كود لاستعادة حسابك</string>
+    <string name="missing_name">برجاء ادخال الاسم</string>
+    <string name="missing_email">برجاء ادخال البريد الالكتروني</string>
+    <string name="missing_pass">برجاء ادخال كلمة المرور</string>
+    <string name="missing_confirm">برجاء تأكيد كلمة المرور</string>
+    <string name="successfull">تم التسجيل بنجاح</string>
+    <string name="notEqual">كلمة المرور غير متطابقة</string>
+    <string name="no_symbols">غير مسموح برموز</string>
+    <string name="home">الرئيسية</string>
+    <string name="chats">الدردشة</string>
+    <string name="search">بحث</string>
+    <string name="live">بث مباشر</string>
+
+    <string name="settings">الاعدادات</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="logout">خروج</string>
+    <string name="most_search">الأكثر بحثا</string>
+    <string name="seemore">رؤية المزيد</string>
+    <string name="title">العنوان</string>
+    <string name="follow">متابعة</string>
+    <string name="unfollow">الغاء المتابعة</string>
+
+
+    <string name="product_name">اسم المنتج</string>
+    <string name="product_desc">تفاصيل المنتج</string>
+
+    <string name="seller_name">البائع :</string>
+    <string name="qty">الكمية</string>
+    <string name="item_price">سعر الوحدة</string>
+    <string name="total_price">الاجمالي</string>
+    <string name="discount">خصم</string>
+    <string name="fav">المُفضلة</string>
+
+    <string name="video_title">عنوان الفيديو</string>
+    <string name="video_desc">التفاصيل</string>
+    <string name="store_name">اسم المتجر</string>
+    <string name="views">مشاهدة</string>
+
+    <string name="history">السِجل</string>
+    <string name="edit_info">تعديل البيانات</string>
+    <string name="notify">الاشعارات</string>
+    <string name="about">عن شاري</string>
+    <string name="light">نمط أبيض</string>
+    <string name="dark">نمط داكن</string>
+    <string name="TypingMessage">Type a message</string>
+
+    <string name="addednewvideo">أضاف فيديو جديد</string>
+    <string name="notification_date">تاريخ الاشعار</string>
+
+    <string name="view_notification">عرض</string>
+    <string name="send_ver_code">Please insert your e-mail Address so that we can send you verification
+    code to restore your account</string>
+
+    <string name="restoreemail">استعادة الحساب</string>
+    <string name="video_call">مكالمة فيديو</string>
+    <string name="voice_call">مكالمة صوتية</string>
+    <string name="statue">الحالة</string>
+
+    <string name="addtocrat">اضافة الى العربة</string>
+    <string name="callseller">الاتصال بالبائع</string>
+    <string name="sendmsg">ارسال رسالة</string>
+    <string name="buynow">الشراء الآن</string>
+
+    <string name="rate">تقييم المُنتج</string>
+    <string name="confirm_rate">تاكيد</string>
+
+    <string name="calling">جار الاتصال ...</string>
+    <string name="end_call">انهاء المُكالمة</string>
+    <string name="mute">كتم الصوت</string>
+    <string name="speaker">الصوت الخارجي</string>
+
+    <string name="share">مشاركة</string>
+    <string name="like">اعجاب</string>
+    <string name="comment">تعليق</string>
+
+
+    <string name="next">التالي</string>
+    <string name="ver_code">كود التأكيد</string>
+
+    <string name="available_qty">الكمية المتاحة :</string>
+    <string name="share_product">مشاركة المنتج</string>
+
+    <string name="search_result">نتائج البحث</string>
+
+    <string name="old_price">السعر القديم</string>
+
+    <string name="following">المُتابعة</string>
+
+    <string name="notification_settings">اعدادات الاشعارات</string>
+
+    <string name="inc_msg">باتت الرسائل التي ترسلها الى هذه الدردشة و المكالمات التي تجريها ضمنها محميه من خلال التشفير التام</string>
+
+    <string name="address">العنوان</string>
+    <string name="phone">رقم التليفون</string>
+
+    <string name="order_now">اطلب الآن</string>
+
+    <string name="confirm_data">تأكيد البيانات</string>
+    <string name="confirm_your_data">تأكيد بيانات التوصيل</string>
+
+    <string name="order_progress">طلبك قيد التنفيذ</string>
+
+    <string name="ok">حسناً</string>
+
+    <string name="remove_from_cart">ازالة من العربة</string>
+
+    <string name="confirm_buy">تأكيد الشراء</string>
+
+    <string name="location">الموقع</string>
+
+    <string name="skip">تخطي</string>
+
+    <string name="number">الرقم</string>
+    <string name="invite">دعوة</string>
+
+    <string name="adv_text">طلب حملة اعلانية</string>
+
+    <string name="company">الشركة</string>
+    <string name="additional_info">معلومات اضافية</string>
+
+    <string name="price">السعر :</string>
+    <string name="View">عرض</string>
+
+
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:drawableLeft="@drawable/ic_lock_24dp"
+        android:background="@drawable/incryption_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:fontFamily="@font/ja"
+        android:text="@string/inc_msg"/>
+
+</LinearLayout>

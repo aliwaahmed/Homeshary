@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <layer-list>
+            <item>
+                <shape>
+                    <gradient android:angle="90" android:centerColor="#dddfe6" android:startColor="#E8EBEF" android:endColor="#E8EBEF" android:type="linear" />
+                    <corners android:radius="4dp" />
+                </shape>
+
+            </item>
+            <item>
+                <bitmap android:gravity="center|right" android:src="@drawable/baseline_unfold_more_black_24" />
+            </item>
+        </layer-list>
+    </item>
+</selector>

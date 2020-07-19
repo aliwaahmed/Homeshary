@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/_lin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/chat_history_item">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/_chats_img"
+            style="@style/chat_history_image"
+            android:src="@drawable/avatar" />
+
+        <LinearLayout style="@style/chat_his_text">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/_chats_name"
+                    style="@style/chat_history_name"
+                    android:text="Name" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/_last_msg"
+                style="@style/chat_history_last_msg"
+                android:text="last message" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        style="@style/chats_line"
+        android:src="@drawable/line" />
+
+</LinearLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/dark_blue"
+    android:layout_width="match_parent"
+    android:elevation="10dp"
+    android:layout_marginBottom="2dp"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+
+        <ImageView
+            android:id="@+id/_video_thumb"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_video_library_black_24dp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/_store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/store_name"
+                android:layout_marginBottom="-10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/ja"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/video_desc"
+                android:textSize="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/ja"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:gravity="left"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/_unfollow_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unfollow"
+            android:fontFamily="@font/ja"
+            android:layout_marginLeft="10dp"
+            android:textAllCaps="false"
+            android:textColor="@color/dark_blue"
+            android:backgroundTint="@color/yellow"
+            android:layout_gravity="bottom"/>
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

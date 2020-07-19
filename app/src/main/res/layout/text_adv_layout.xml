@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/yellow">
+
+
+        <ImageView
+            android:id="@+id/_close_adv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/closeadv"
+            app:layout_constraintBottom_toBottomOf="@+id/adv_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.958"
+            app:layout_constraintStart_toStartOf="@+id/adv_text"
+            app:layout_constraintTop_toTopOf="@+id/adv_text"
+            app:layout_constraintVertical_bias="0.1"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/adv_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Adv Text"
+            android:src="@drawable/avatar"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/ja"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
