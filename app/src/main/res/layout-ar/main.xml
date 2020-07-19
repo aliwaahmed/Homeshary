@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:background="@color/white_blue"
     android:orientation="vertical"
+    android:layout_gravity="center"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -13,6 +14,7 @@
         android:layout_width="match_parent"
         android:background="@color/white_blue"
         android:orientation="vertical"
+
         android:layout_height="match_parent"
         tools:context=".Auth.MainActivity">
 
@@ -44,6 +46,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_gravity="center"
+
             android:gravity="center"
             android:paddingTop="120dp"
             android:paddingLeft="40dp"
@@ -130,6 +133,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <!--        line-->
@@ -163,6 +167,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14dp"
+                android:visibility="gone"
                 android:text="@string/loginVia"
                 android:fontFamily="@font/ja"
                 android:textColor="@color/white"
@@ -182,6 +187,7 @@
                     android:id="@+id/login_button"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:visibility="gone"
                     android:layout_gravity="center_horizontal"
 
                     />
@@ -194,6 +200,7 @@
                     android:id="@+id/sign_in_button"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:visibility="gone"
                     android:layout_gravity="center_horizontal"
                     />
 
@@ -217,6 +224,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="left"
+
             android:layout_marginLeft="10dp"
             android:gravity="left">
 

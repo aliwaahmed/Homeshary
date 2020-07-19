@@ -161,6 +161,8 @@
     <string name="deliver">الاستلام من المقر</string>
     <string name="deliver2">الاستلام من المقر</string>
     <string name="share100">قام بمشاركه المنتج</string>
+    <string name="Shary">Shary</string>
+    <string name="recommend_app">\nLet me recommend you this application\n\n</string>
 
 
 </resources>

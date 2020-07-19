@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.customer.shary.live.MainActivity;
 import com.customer.shary.live.R;
 
 import org.jetbrains.annotations.NotNull;
@@ -60,9 +61,9 @@ public class Signup extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("Signup", MODE_PRIVATE);
         String name = prefs.getString("name", "");//"No name defined" is the default value.
 
-        if(name.length()>0)
+        if(!name.equals(""))
         {
-            Intent intent =new Intent(getApplicationContext(),SendCodeActivity.class);
+            Intent intent =new Intent(getApplicationContext(), MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
 
@@ -164,8 +165,7 @@ public class Signup extends AppCompatActivity {
                         editor.putString("name",name);
                         editor.apply();
 
-
-                        Intent intent =new Intent(getApplicationContext(),SendCodeActivity.class);
+                        Intent intent =new Intent(getApplicationContext(),MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                         finish();

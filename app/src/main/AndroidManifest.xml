@@ -45,7 +45,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".payment.order.myorder"></activity>
+        <activity android:name=".ui.settings.terms"></activity>
+        <activity android:name=".payment.order.myorder" />
         <activity android:name=".payment.orderSteper.OrderSteper" />
         <activity android:name=".ads.Main2Activity" />
         <!--

@@ -130,6 +130,8 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:visibility="gone"
+
                 android:orientation="horizontal">
 
                 <!--        line-->
@@ -164,6 +166,8 @@
                 android:layout_height="wrap_content"
                 android:textSize="14dp"
                 android:text="Login With"
+                android:visibility="gone"
+
                 android:fontFamily="@font/ja"
                 android:textColor="@color/white"
                />
@@ -182,6 +186,8 @@
                     android:id="@+id/login_button"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:visibility="gone"
+
                     android:layout_gravity="center_horizontal"
 
                     />
@@ -194,6 +200,8 @@
                     android:id="@+id/sign_in_button"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:visibility="gone"
+
                     android:layout_gravity="center_horizontal"
                     />
 
