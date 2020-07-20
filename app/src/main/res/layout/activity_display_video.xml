@@ -242,8 +242,8 @@
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/storeImage"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:src="@drawable/appicon"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/storename"
@@ -287,7 +287,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="45dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="20dp"
                     android:fontFamily="@font/ja"
                     android:inputType="textMultiLine"
                     android:maxLines="2"
@@ -300,7 +300,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="45dp"
                     android:layout_marginTop="10dp"
                     android:orientation="vertical">
                     <LinearLayout
@@ -385,7 +385,7 @@
 
             </LinearLayout>
 
-<!--            line after like & share buttons-->
+            <!--            line after like & share buttons-->
 
 
             <ImageView
@@ -393,7 +393,7 @@
                 android:layout_height="3dp"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/line"/>
-<!--           price -->
+            <!--           price -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -643,12 +643,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_send_yellow_24dp" />
+                        android:src="@drawable/ic_baseline_add_circle_24" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Send Message"
+                        android:text="Add comment"
                         android:layout_gravity="center"
                         android:textColor="@color/white"
                         android:textSize="10dp" />
@@ -679,7 +679,7 @@
                 </LinearLayout>
 
 
-<!--                location-->
+                <!--                location-->
 
                 <LinearLayout
                     android:id="@+id/_lin_location"
@@ -704,7 +704,7 @@
                 </LinearLayout>
 
             </LinearLayout>
-<!--            VISIBILITY === GONE -->
+            <!--            VISIBILITY === GONE -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -755,7 +755,7 @@
                 android:src="@drawable/line"/>
 
 
-<!--            up next videos-->
+            <!--            up next videos-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -799,7 +799,7 @@
                 android:layout_marginRight="10dp"
                 tools:listitem="@layout/display_videos_raw"/>
 
-<!--            top rated-->
+            <!--            top rated-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -843,7 +843,7 @@
                 tools:listitem="@layout/display_videos_raw"/>
 
 
-<!--            comments here-->
+            <!--            comments here-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -876,22 +876,25 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"/>
 
-<!--            add comment-->
+            <!--            add comment-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:weightSum="8"
+                android:background="@drawable/addcomment"
+                android:layout_marginHorizontal="20dp"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/_commenttext"
                     android:layout_width="250dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="6"
+                    android:textColor="@color/dark_blue"
                     android:background="@drawable/addcomment"
                     android:fontFamily="@font/ja"
                     android:hint="Add Comment"
@@ -904,14 +907,14 @@
                     android:layout_width="35dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
-                    android:src="@drawable/icon_addcomment" />
+                    android:src="@drawable/addcomment2" />
 
             </LinearLayout>
 
-<!--            <androidx.coordinatorlayout.widget.CoordinatorLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--              >-->
+            <!--            <androidx.coordinatorlayout.widget.CoordinatorLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--              >-->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/_comment"
@@ -920,10 +923,10 @@
                 tools:itemCount="2"
                 tools:listitem="@layout/comments_row" />
 
-<!--            </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
+            <!--            </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
 
 
-<!--         top rated videos-->
+            <!--         top rated videos-->
 
 
             <ImageView
