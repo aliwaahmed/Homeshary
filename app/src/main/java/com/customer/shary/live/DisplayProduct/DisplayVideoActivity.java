@@ -60,6 +60,7 @@ import com.customer.shary.live.payment.payment;
 import com.customer.shary.live.ui.chat_history.chat.chat;
 import com.customer.shary.live.ui.home.VideoCallAndVoiceCall.MyVideoCall;
 import com.customer.shary.live.ui.home.datamodel.apidata;
+import com.google.android.material.snackbar.Snackbar;
 import com.logapps.videoplayer.JCVideoPlayerStandard;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
@@ -154,6 +155,7 @@ public class DisplayVideoActivity extends AppCompatActivity
     private LinearLayout _lin_location;
 
     private TextView product_name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -166,7 +168,7 @@ public class DisplayVideoActivity extends AppCompatActivity
 
 
         //TODO :FINIDVIEW BYID
-        product_name=findViewById(R.id.product_name);
+        product_name = findViewById(R.id.product_name);
         storeImage = findViewById(R.id.storeImage);
         StoreName = findViewById(R.id.storename);
         display_desc = findViewById(R.id.display_desc);
@@ -255,8 +257,7 @@ public class DisplayVideoActivity extends AppCompatActivity
         Glide.with(this).load(getIntent().getStringExtra("storeimage")).into(storeImage);
 
 
-
-                product_name.setText( getIntent().getStringExtra("name"));
+        product_name.setText(getIntent().getStringExtra("name"));
 
 
         cart_number.setVisibility(View.VISIBLE);
@@ -371,24 +372,33 @@ public class DisplayVideoActivity extends AppCompatActivity
         _imgsendcomment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadads.getInstance().mInterstitialAd(getApplicationContext());
+                if (!_commenttext.getText().toString().isEmpty()) {
+                    loadads.getInstance().mInterstitialAd(getApplicationContext());
 
-                SharedPreferences sharedPreferences = context.getSharedPreferences("login", MODE_PRIVATE);
+                    SharedPreferences sharedPreferences = context.getSharedPreferences("login", MODE_PRIVATE);
 
-                if (sharedPreferences.getString("status", "-1").equals("-1")) {
-                    Intent intent = new Intent(getApplicationContext(), main.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(intent);
+                    if (sharedPreferences.getString("status", "-1").equals("-1")) {
+                        Intent intent = new Intent(getApplicationContext(), main.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(intent);
 
+                    } else {
+                        datamodelComment datamodelComment = new datamodelComment();
+                        datamodelComment.setContent(_commenttext.getText().toString());
+                        datamodelComment.setImg(sharedPreferences.getString("image", "-1"));
+                        datamodelComment.setName(sharedPreferences.getString("name", "-1"));
+                        datamodelComments.add(datamodelComment);
+                        adapter_comment.notifyDataSetChanged();
+
+
+                        _comment.smoothScrollToPosition(adapter_comment.getItemCount());
+
+                        signallingClient.comment(String.valueOf(getIntent().getExtras().getInt("product_id")), prefs.getString("login_id", "-1"),
+                                _commenttext.getText().toString());
+                        _commenttext.setText("");
+                    }
                 } else {
-                    datamodelComment datamodelComment = new datamodelComment();
-                    datamodelComment.setContent(_commenttext.getText().toString());
-                    datamodelComments.add(datamodelComment);
-                    adapter_comment.notifyDataSetChanged();
-
-                    signallingClient.comment(String.valueOf(getIntent().getExtras().getInt("product_id")), prefs.getString("login_id", "-1"),
-                            _commenttext.getText().toString());
-                    _commenttext.setText("");
+                    Snackbar.make(_commenttext, R.string.enter_comment, Snackbar.LENGTH_LONG).show();
                 }
             }
         });
@@ -551,7 +561,7 @@ public class DisplayVideoActivity extends AppCompatActivity
                         link
                         + "\n" + "Price "
                         + price + "\n");
-               shareIntent.setType("text/plain");
+                shareIntent.setType("text/plain");
                 context.startActivity(Intent.createChooser(shareIntent, "send"));
             }
         });
@@ -706,15 +716,14 @@ public class DisplayVideoActivity extends AppCompatActivity
             public void onClick(View view) {
 
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse("tel:"+"01015124020"));
+                callIntent.setData(Uri.parse("tel:" + "01015124020"));
                 startActivity(callIntent);
-
 
 
             }
         });
 
-        LinearLayout _whats_call =(LinearLayout) dialogView.findViewById(R.id._whats_call);
+        LinearLayout _whats_call = (LinearLayout) dialogView.findViewById(R.id._whats_call);
 
         _whats_call.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -724,19 +733,16 @@ public class DisplayVideoActivity extends AppCompatActivity
         });
 
 
-        LinearLayout mail =(LinearLayout) dialogView.findViewById(R.id.mail);
+        LinearLayout mail = (LinearLayout) dialogView.findViewById(R.id.mail);
 
         mail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-
                 gmail();
             }
         });
-
-
 
 
         runOnUiThread(new Runnable() {
@@ -746,6 +752,7 @@ public class DisplayVideoActivity extends AppCompatActivity
             }
         });
     }
+
     public void gmail() {
 
 
@@ -773,13 +780,6 @@ public class DisplayVideoActivity extends AppCompatActivity
 //            email.setType("message/rfc822");  //set the email recipient
 //
 //            startActivity(Intent.createChooser(email, "Choose an Email client :"));
-
-
-
-
-
-
-
 
 
             // TODO : SEND MESSAGE TO APP ADMIN
@@ -1322,7 +1322,7 @@ public class DisplayVideoActivity extends AppCompatActivity
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getApplicationContext(),e.getMessage().toString(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_LONG).show();
                     }
                 });
 
@@ -1428,7 +1428,7 @@ public class DisplayVideoActivity extends AppCompatActivity
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(getApplicationContext(),e.getMessage().toString(),Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), e.getMessage().toString(), Toast.LENGTH_LONG).show();
                         }
                     });
                 }
@@ -1445,8 +1445,7 @@ public class DisplayVideoActivity extends AppCompatActivity
     protected void onResume() {
         super.onResume();
         Log.e("resume", "puse");
-        if(videoView!=null)
-        {
+        if (videoView != null) {
             videoView.pause();
             videoView.setVisibility(View.GONE);
             myView.setVisibility(View.GONE);

@@ -29,6 +29,8 @@ import com.customer.shary.live.auth.main;
 import com.customer.shary.live.favourite.favourite_Activity;
 import com.customer.shary.live.payment.order.myorder;
 import com.customer.shary.live.ui.settings.edite_my_info.edite_info;
+import com.customer.shary.live.ui.settings.edite_my_info.model.userdatamodel;
+import com.customer.shary.live.ui.settings.edite_my_info.viewmodel.viewmodel;
 import com.customer.shary.live.ui.settings.history.history;
 import com.customer.shary.live.ui.settings.notificationsetting.notificationsetting;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -177,7 +179,27 @@ public class settingFragment extends Fragment {
                     _profile_img.setImageResource(R.drawable.avatar);
                 }
             });
-            builder.build().load(prefs.getString("image", "2")).into(_profile_img);
+
+           com.customer.shary.live.ui.settings.edite_my_info.viewmodel.viewmodel viewmodel;
+
+            viewmodel = ViewModelProviders.of(this).get(viewmodel.class);
+
+            viewmodel.load(getContext()).observe(getViewLifecycleOwner(), new Observer<userdatamodel>() {
+                @Override
+                public void onChanged(userdatamodel userdatamodel) {
+
+                    SharedPreferences.Editor editor = getActivity().getSharedPreferences("login", MODE_PRIVATE).edit();
+
+                    editor.putString("image",userdatamodel.getImg());
+                    editor.putString("name",userdatamodel.getName());
+                    editor.apply();
+                    editor.commit();
+
+                    Glide.with(getActivity()).load(userdatamodel.getImg()).into(_profile_img);
+                }
+            });
+
+
 
 
             _profile_name.setText(prefs.getString("name", "-2"));
