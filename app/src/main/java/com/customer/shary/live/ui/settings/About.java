@@ -17,12 +17,13 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class terms extends AppCompatActivity {
+public class About extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.terms_layout);
+        setContentView(R.layout.activity_about);
         ImageView backbtn=findViewById(R.id.backbtn);
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +32,8 @@ public class terms extends AppCompatActivity {
             }
         });
     }
+
+
     public void get(String url)
     {
         OkHttpClient client = new OkHttpClient();
@@ -52,10 +55,12 @@ public class terms extends AppCompatActivity {
 
 
                 Gson gson = new Gson();
-                //  Results results = gson.fromJson(response.toString(), Results.class);
+              //  Results results = gson.fromJson(response.toString(), Results.class);
 
 
             }
         });
     }
+
+
 }

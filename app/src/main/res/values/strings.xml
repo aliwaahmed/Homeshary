@@ -163,6 +163,8 @@
     <string name="share100">قام بمشاركه المنتج</string>
     <string name="Shary">Shary</string>
     <string name="recommend_app">\nLet me recommend you this application\n\n</string>
+    <string name="order_status">\"مع تحيات فريق العمل  \"</string>
+    <string name="order_status1">تم ارسال الطلب بنجاح وسيتم التواصل معك للتتبع الطلب ومعرفه حالته</string>
 
 
 </resources>

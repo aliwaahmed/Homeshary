@@ -2,6 +2,7 @@ package com.customer.shary.live.ui.settings.history;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,13 @@ public class history extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.history_layout);
+        ImageView backbtn=findViewById(R.id.backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         recyclerView=findViewById(R.id._orders_recycler);
         linearLayoutManager=new LinearLayoutManager(getApplicationContext());
 

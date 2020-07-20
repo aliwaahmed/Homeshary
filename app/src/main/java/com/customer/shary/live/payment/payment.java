@@ -14,11 +14,13 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.customer.shary.live.R;
 import com.customer.shary.live.Sockets.SignallingClient;
 import com.customer.shary.live.ads.loadads;
+import com.customer.shary.live.payment.order.myorder;
 import com.customer.shary.live.payment.orderSteper.OrderSteper;
 
 import org.jetbrains.annotations.NotNull;
@@ -215,7 +217,12 @@ public class payment extends AppCompatActivity {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
-
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),e.getMessage().toString(),Toast.LENGTH_LONG).show();
+                    }
+                });
             }
 
             @Override
@@ -224,34 +231,50 @@ public class payment extends AppCompatActivity {
 
                 String res = response.body().string();
 
+                Log.e("responsealihere",res.toString());
 
                 try {
+
                     JSONObject jsonObject = new JSONObject(res);
+                    if(jsonObject.getInt("status")==200) {
+
+
                     JSONObject jsonArray = jsonObject.getJSONObject("data");
                     String s = jsonArray.getString("store_id");
                     SignallingClient.getInstance(getApplicationContext()).buy_now_order(s,
                             Product_id, user_id, addr, phone);
                     Log.e("saller_id", s);
+                        Log.e("order", res);
+
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                //dialog();
+
+                                Intent intent =new Intent(getApplicationContext(), myorder.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                                finish();
+
+
+                            }
+                        });
+
+                    }
+                    else
+                    {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(getApplicationContext(),jsonObject.toString(),Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                Log.e("order", res);
-
-
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        //dialog();
-
-                        Intent intent = new Intent(getApplicationContext(), OrderSteper.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                        finish();
-
-
-                    }
-                });
 
             }
         });

@@ -1,20 +1,25 @@
 package com.customer.shary.live.cart;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.androidnetworking.AndroidNetworking;
 import com.customer.shary.live.CustomRecyclerView.MediaObject;
 import com.customer.shary.live.R;
+import com.customer.shary.live.auth.main;
 import com.customer.shary.live.cart.recyclerview.cartRecycler;
 import com.customer.shary.live.cart.recyclerview.cartmodel;
+import com.customer.shary.live.payment.payment;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -47,11 +52,40 @@ public class Cart_Activity extends AppCompatActivity implements cart_sumation {
 
 
     private ImageView backbtn;
+    public static LinearLayout buy,empty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_);
+
+        empty =findViewById(R.id.empty);
+
+        buy=findViewById(R.id.buy);
+        buy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SharedPreferences sharedPreferences =
+                        getSharedPreferences("login", MODE_PRIVATE);
+
+                if (sharedPreferences.getString("status", "-1").equals("-1")) {
+                    Intent intent = new Intent(getApplicationContext(), main.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+
+                } else {
+
+
+                    Intent in = new Intent(getApplicationContext(), payment.class);
+
+                    in.putExtra("products", "1");
+                    in.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(in);
+
+                }
+            }
+        });
 
         backbtn = findViewById(R.id.backbtn);
         backbtn.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +131,25 @@ public class Cart_Activity extends AppCompatActivity implements cart_sumation {
                     JSONObject jsonObject = new JSONObject(res);
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
 
+                    if(jsonArray.length()<=0)
+                    {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                empty.setVisibility(View.VISIBLE);
+                            }
+                        });
+                    }
+                    else
+                    {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                empty.setVisibility(View.GONE);
+                            }
+                        });
+
+                    }
 
                     for (int i = 0; i < jsonArray.length(); i++) {
 

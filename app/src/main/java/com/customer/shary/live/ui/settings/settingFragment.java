@@ -50,7 +50,7 @@ public class settingFragment extends Fragment {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent != null) {
-                SharedPreferences prefs =getActivity().getSharedPreferences("login", MODE_PRIVATE);
+                SharedPreferences prefs =context.getSharedPreferences("login", MODE_PRIVATE);
                 if(prefs!=null) {
                     Glide.with(getActivity()).load(prefs.getString("image", "2")).into(_profile_img);
                     _profile_name.setText(prefs.getString("name", "-2"));
@@ -86,16 +86,16 @@ public class settingFragment extends Fragment {
         root.findViewById(R.id._about).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("http://www.google.com"));
-                startActivity(browserIntent);
+                Intent intent =new Intent(getActivity(), About.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getContext().startActivity(intent);
             }
         });
         root.findViewById(R.id.privacy).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("http://www.google.com"));
+                Intent browserIntent = new Intent(getContext(),
+                        privacy.class);
                 startActivity(browserIntent);
             }
         });

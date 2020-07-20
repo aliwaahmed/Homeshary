@@ -86,7 +86,13 @@ public class edite_info extends AppCompatActivity {
         _edit_password = findViewById(R.id._edit_password);
         upload_image = findViewById(R.id.upload_image);
         prefs = getSharedPreferences("login", MODE_PRIVATE);
-
+        ImageView backbtn=findViewById(R.id.backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         progressBar3.setVisibility(View.GONE);
         viewmodel = ViewModelProviders.of(this).get(viewmodel.class);
 
