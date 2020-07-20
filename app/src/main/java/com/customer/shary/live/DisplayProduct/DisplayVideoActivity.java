@@ -383,8 +383,13 @@ public class DisplayVideoActivity extends AppCompatActivity
                 } else {
                     datamodelComment datamodelComment = new datamodelComment();
                     datamodelComment.setContent(_commenttext.getText().toString());
+                    datamodelComment.setImg(sharedPreferences.getString("image","-1"));
+                    datamodelComment.setName(sharedPreferences.getString("name","-1"));
                     datamodelComments.add(datamodelComment);
                     adapter_comment.notifyDataSetChanged();
+
+
+                    _comment.smoothScrollToPosition(adapter_comment.getItemCount());
 
                     signallingClient.comment(String.valueOf(getIntent().getExtras().getInt("product_id")), prefs.getString("login_id", "-1"),
                             _commenttext.getText().toString());
