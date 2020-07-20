@@ -67,26 +67,27 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
         android:background="@color/white_blue"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="50dp">
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cart_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
             android:layout_marginBottom="50dp"
+            android:padding="15dp"
             app:layout_constraintBottom_toTopOf="@+id/bottomNav"
             app:layout_constraintTop_toBottomOf="@+id/toolbar2"
             app:layout_constraintVertical_bias="0.100"
             tools:ignore="MissingConstraints"
             tools:itemCount="3"
             tools:layout_editor_absoluteX="20dp"
-            tools:listitem="@layout/cart_layout"/>
+            tools:listitem="@layout/cart_layout" />
 
     </LinearLayout>
 
@@ -159,5 +160,32 @@
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
+    <LinearLayout
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="parent">
 
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@drawable/empty"
+            android:backgroundTint="@color/yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="empty"
+            android:textColor="@color/yellow"
+            android:textSize="20dp" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

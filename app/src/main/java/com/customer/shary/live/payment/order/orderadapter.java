@@ -2,6 +2,7 @@ package com.customer.shary.live.payment.order;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,10 @@ public class orderadapter extends RecyclerView.Adapter<viewholder> {
 
             }
         });
+        if(position==data.size()-1)
+        {
+            holder.itemView.setBackgroundColor(Color.GREEN);
+        }
 
     }
 

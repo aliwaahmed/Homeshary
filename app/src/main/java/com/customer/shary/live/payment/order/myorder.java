@@ -161,8 +161,10 @@ public class myorder extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                           orderadapter orderadapter = new orderadapter(getApplicationContext(), list);
+                            _orders_recycler.setAdapter(orderadapter);
+                            _orders_recycler.smoothScrollToPosition(orderadapter.getItemCount());
 
-                            _orders_recycler.setAdapter(new orderadapter(getApplicationContext(), list));
 
                         }
                     });

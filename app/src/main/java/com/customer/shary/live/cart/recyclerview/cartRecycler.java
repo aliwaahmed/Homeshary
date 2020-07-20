@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.customer.shary.live.DisplayProduct.DisplayVideoActivity;
 import com.customer.shary.live.R;
 import com.customer.shary.live.Sockets.SignallingClient;
+import com.customer.shary.live.cart.Cart_Activity;
 import com.customer.shary.live.cart.cart_sumation;
 
 import java.util.ArrayList;
@@ -66,7 +67,16 @@ public class cartRecycler extends RecyclerView.Adapter<holder> {
             @Override
             public void onClick(View view) {
                 try {
+                    if(list.size()<=0)
+                    {
+                        try {
+                            Cart_Activity.empty.setVisibility(View.VISIBLE);
+                        }catch (Exception e)
+                        {
 
+                        }
+
+                    }
 
                     Log.e("add", "add");
 
@@ -84,6 +94,18 @@ public class cartRecycler extends RecyclerView.Adapter<holder> {
                     DisplayVideoActivity.cart_product += 1;
 
                     DisplayVideoActivity.cart_number.setText(String.valueOf(DisplayVideoActivity.cart_product));
+
+                    if(list.size()<=0)
+                    {
+                        try {
+                            Cart_Activity.empty.setVisibility(View.VISIBLE);
+                        }catch (Exception e)
+                        {
+
+                        }
+
+                    }
+
                 } catch (Exception e) {
 
                 }
@@ -126,7 +148,16 @@ public class cartRecycler extends RecyclerView.Adapter<holder> {
 
                     DisplayVideoActivity.cart_number.setText(String.valueOf(DisplayVideoActivity.cart_product));
 
+                    if(list.size()<=0)
+                    {
+                        try {
+                            Cart_Activity.empty.setVisibility(View.VISIBLE);
+                        }catch (Exception e)
+                        {
 
+                        }
+
+                    }
                 } catch (Exception e) {
 
                 }
@@ -138,7 +169,16 @@ public class cartRecycler extends RecyclerView.Adapter<holder> {
             public void onClick(View view) {
 
                 try {
+                    if(list.size()<=0)
+                    {
+                        try {
+                            Cart_Activity.empty.setVisibility(View.VISIBLE);
+                        }catch (Exception e)
+                        {
 
+                        }
+
+                    }
 
                     int qty = Integer.valueOf(list.get(position).getQuantity());
                     int new_qty = qty - 1;
@@ -154,7 +194,16 @@ public class cartRecycler extends RecyclerView.Adapter<holder> {
                     DisplayVideoActivity.cart_product -= 1;
 
                     DisplayVideoActivity.cart_number.setText(String.valueOf(DisplayVideoActivity.cart_product));
+                    if(list.size()<=0)
+                    {
+                        try {
+                            Cart_Activity.empty.setVisibility(View.VISIBLE);
+                        }catch (Exception e)
+                        {
 
+                        }
+
+                    }
                 } catch (Exception e) {
 
                 }
@@ -162,6 +211,7 @@ public class cartRecycler extends RecyclerView.Adapter<holder> {
         });
 
         holder.cart_newprice.setText(String.valueOf(Integer.valueOf(list.get(position).getQuantity()) * Integer.valueOf(list.get(position).getNew_price())));
+
 
 
     }

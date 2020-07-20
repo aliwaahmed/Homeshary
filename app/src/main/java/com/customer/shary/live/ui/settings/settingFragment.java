@@ -22,6 +22,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.bumptech.glide.Glide;
+import com.customer.shary.live.BuildConfig;
 import com.customer.shary.live.R;
 import com.customer.shary.live.ads.loadads;
 import com.customer.shary.live.auth.main;
@@ -42,13 +43,14 @@ public class settingFragment extends Fragment {
     private LinearLayout _history,_edit_info,_fav,_notifications,_my_orders;
     private ImageView _profile_img;
     private TextView _profile_name;
+    private LinearLayout _share_app;
 
 
     public BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent != null) {
-                SharedPreferences prefs =getActivity().getSharedPreferences("login", MODE_PRIVATE);
+                SharedPreferences prefs =context.getSharedPreferences("login", MODE_PRIVATE);
                 if(prefs!=null) {
                     Glide.with(getActivity()).load(prefs.getString("image", "2")).into(_profile_img);
                     _profile_name.setText(prefs.getString("name", "-2"));
@@ -65,6 +67,7 @@ public class settingFragment extends Fragment {
                 ViewModelProviders.of(this).get(settingViewModel.class);
         View root = inflater.inflate(R.layout.settings_layout, container, false);
 
+        _share_app=root.findViewById(R.id._share_app);
         _my_orders=root.findViewById(R.id._my_orders);
         _my_orders.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +79,60 @@ public class settingFragment extends Fragment {
 
             }
         });
+
+
+
+
+        root.findViewById(R.id._about).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(getActivity(), About.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getContext().startActivity(intent);
+            }
+        });
+        root.findViewById(R.id.privacy).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(getContext(),
+                        privacy.class);
+                startActivity(browserIntent);
+            }
+        });
+
+        root.findViewById(R.id._terms).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(getContext(),
+                        terms.class);
+                startActivity(browserIntent);
+            }
+        });
+
+
+
+
+
+
+        _share_app.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.Shary));
+                    String shareMessage= getString(R.string.recommend_app);
+                    shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+                    startActivity(Intent.createChooser(shareIntent, "choose one"));
+                } catch(Exception e) {
+                    //e.toString();
+                }
+
+            }
+        });
+
+
         SharedPreferences sharedPreferences =getActivity().getSharedPreferences("login",MODE_PRIVATE);
 
         if(sharedPreferences.getString("status","-1").equals("-1"))
@@ -84,7 +141,6 @@ public class settingFragment extends Fragment {
 
             BottomNavigationView navigation = (BottomNavigationView) getActivity().findViewById(R.id.nav_view);
             navigation.setSelectedItemId(R.id.navigation_home);
-
             Intent intent =new Intent(getActivity(), main.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             getContext().startActivity(intent);

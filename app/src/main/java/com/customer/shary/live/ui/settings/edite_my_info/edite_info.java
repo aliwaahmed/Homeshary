@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -39,6 +40,7 @@ import com.customer.shary.live.ui.settings.edite_my_info.model.userdatamodel;
 import com.customer.shary.live.ui.settings.edite_my_info.viewmodel.viewmodel;
 import com.customer.shary.live.ui.settings.settingViewModel;
 import com.github.dhaval2404.imagepicker.ImagePicker;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -68,12 +70,14 @@ public class edite_info extends AppCompatActivity {
     private String imgDecodableString;
     private SharedPreferences prefs;
 
+    private ProgressBar progressBar3;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_info);
         _edit_name = findViewById(R.id._edit_name);
+        progressBar3=findViewById(R.id.progressBar3);
         _edit_email = findViewById(R.id._edit_email);
         _edit_address = findViewById(R.id._edit_address);
         _edit_phone = findViewById(R.id._edit_phone);
@@ -82,7 +86,14 @@ public class edite_info extends AppCompatActivity {
         _edit_password = findViewById(R.id._edit_password);
         upload_image = findViewById(R.id.upload_image);
         prefs = getSharedPreferences("login", MODE_PRIVATE);
-
+        ImageView backbtn=findViewById(R.id.backbtn);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+        progressBar3.setVisibility(View.GONE);
         viewmodel = ViewModelProviders.of(this).get(viewmodel.class);
 
         viewmodel.load(getApplicationContext()).observe(this, new Observer<userdatamodel>() {
@@ -104,6 +115,7 @@ public class edite_info extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(imgDecodableString!=null) {
+                    progressBar3.setVisibility(View.VISIBLE);
                     post_new_data(_edit_name.getText().toString(),
                             _edit_email.getText().toString(),
                             _edit_address.getText().toString(),
@@ -113,6 +125,8 @@ public class edite_info extends AppCompatActivity {
                 }
                 else
                 {
+                    progressBar3.setVisibility(View.VISIBLE);
+
                     post_new_data(_edit_name.getText().toString(),
                             _edit_email.getText().toString(),
                             _edit_address.getText().toString(),
@@ -202,7 +216,8 @@ public class edite_info extends AppCompatActivity {
                                 Intent intent = new Intent("filter_string");
                                 intent.putExtra("key", "My Data");
                                 // put your all data using put extra
-
+                                progressBar3.setVisibility(View.GONE);
+                                Snackbar.make(progressBar3,"Data Updated",Snackbar.LENGTH_LONG).show();
                                 LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
 
                             }

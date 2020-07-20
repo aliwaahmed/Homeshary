@@ -24,6 +24,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.annotation.RequiresApi;
@@ -1318,6 +1319,13 @@ public class DisplayVideoActivity extends AppCompatActivity
             @Override
             public void onFailure(Request request, IOException e) {
 
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),e.getMessage().toString(),Toast.LENGTH_LONG).show();
+                    }
+                });
+
             }
 
             @Override
@@ -1417,6 +1425,12 @@ public class DisplayVideoActivity extends AppCompatActivity
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Log.e("Related_Video_Error", e.getMessage().toString());
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(),e.getMessage().toString(),Toast.LENGTH_LONG).show();
+                        }
+                    });
                 }
 
 
