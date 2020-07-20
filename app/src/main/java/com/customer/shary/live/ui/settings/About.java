@@ -5,9 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.customer.shary.live.R;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -31,7 +37,9 @@ public class About extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        get("http://shary.live/api/v1/aboutShary");
     }
+
 
 
     public void get(String url)
@@ -54,13 +62,34 @@ public class About extends AppCompatActivity {
                 final String myResponse = response.body().string();
 
 
-                Gson gson = new Gson();
-              //  Results results = gson.fromJson(response.toString(), Results.class);
+                try {
+                    JSONObject jsonObject =new JSONObject(myResponse);
+                    JSONArray jsonElements = jsonObject.getJSONArray("data");
+                    for(int i =0;i<jsonElements.length();i++)
+                    {
+
+                    }
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            TextView textView10 =findViewById(R.id.textView12);
+                            try {
+                                textView10.setText(jsonElements.getJSONObject(0).getString("content"));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+
 
 
             }
         });
     }
-
 
 }

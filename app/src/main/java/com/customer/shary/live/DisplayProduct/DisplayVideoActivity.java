@@ -85,6 +85,8 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
+import okhttp3.Call;
+
 
 public class DisplayVideoActivity extends AppCompatActivity
         implements SocketCallBack, videoscallback {
@@ -155,6 +157,9 @@ public class DisplayVideoActivity extends AppCompatActivity
     private LinearLayout _lin_location;
 
     private TextView product_name;
+    private String phone="";
+    private String mail="";
+    private String whatsapp_phone="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,7 +170,7 @@ public class DisplayVideoActivity extends AppCompatActivity
 
 
         prefs = getSharedPreferences("login", MODE_PRIVATE);
-
+        get("http://shary.live/api/v1/owner");
 
         //TODO :FINIDVIEW BYID
         product_name = findViewById(R.id.product_name);
@@ -716,7 +721,7 @@ public class DisplayVideoActivity extends AppCompatActivity
             public void onClick(View view) {
 
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse("tel:" + "01015124020"));
+                callIntent.setData(Uri.parse("tel:" + phone));
                 startActivity(callIntent);
 
 
@@ -784,7 +789,7 @@ public class DisplayVideoActivity extends AppCompatActivity
 
             // TODO : SEND MESSAGE TO APP ADMIN
             Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-            emailIntent.setData(Uri.parse("mailto: alisamihakemy@gmail.com"));
+            emailIntent.setData(Uri.parse("mailto:"+mail));
             startActivity(Intent.createChooser(emailIntent, "Send feedback"));
         } catch (Exception e) {
             new android.app.AlertDialog.Builder(this)
@@ -809,7 +814,7 @@ public class DisplayVideoActivity extends AppCompatActivity
         try {
             PackageManager packageManager = this.getPackageManager();
             Intent i = new Intent(Intent.ACTION_VIEW);
-            String url = "https://api.whatsapp.com/send?phone=" + "+201030410591" + "&text=" + URLEncoder.encode("hello", "UTF-8");
+            String url = "https://api.whatsapp.com/send?phone=" +whatsapp_phone+ "&text=" + URLEncoder.encode("hello", "UTF-8");
             i.setPackage("com.whatsapp");
             i.setData(Uri.parse(url));
             if (i.resolveActivity(packageManager) != null) {
@@ -1456,4 +1461,39 @@ public class DisplayVideoActivity extends AppCompatActivity
         Related_product(product_id);
     }
 
+    public void get(String url) {
+        okhttp3.OkHttpClient client = new okhttp3.OkHttpClient();
+
+        okhttp3.Request request = new okhttp3.Request.Builder()
+                .url(url)
+                .build();
+
+        client.newCall(request).enqueue(new okhttp3.Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                call.cancel();
+            }
+
+            @Override
+            public void onResponse(Call call, okhttp3.Response response) throws IOException {
+
+                final String myResponse = response.body().string();
+
+
+                try {
+                    JSONObject jsonObject = new JSONObject(myResponse);
+
+
+                    phone= String.valueOf(jsonObject.getInt("phone"));
+                    mail =jsonObject.getString("mail");
+                    whatsapp_phone= String.valueOf(jsonObject.getInt("whatsapp_phone"));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
+    }
 }
