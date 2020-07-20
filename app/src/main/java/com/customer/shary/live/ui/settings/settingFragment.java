@@ -52,7 +52,7 @@ public class settingFragment extends Fragment {
             if (intent != null) {
                 SharedPreferences prefs =context.getSharedPreferences("login", MODE_PRIVATE);
                 if(prefs!=null) {
-                    Glide.with(getActivity()).load(prefs.getString("image", "2")).into(_profile_img);
+                    Glide.with(context).load(prefs.getString("image", "2")).into(_profile_img);
                     _profile_name.setText(prefs.getString("name", "-2"));
                 }
             }
